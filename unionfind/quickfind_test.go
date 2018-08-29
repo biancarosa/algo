@@ -7,7 +7,7 @@ import (
 )
 
 func TestQuickFind(t *testing.T) {
-	quickfind := QuickFindImpl{}
+	quickfind := QuickFind{}
 	quickfind.New(3)
 
 	assert.False(t, quickfind.Connected(0, 1))
