@@ -25,3 +25,15 @@ func TestQuickFind(t *testing.T) {
 	assert.True(t, quickfind.Connected(1, 2))
 	assert.True(t, quickfind.Connected(0, 2))
 }
+
+func BenchmarkQuickFind(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		quickfind := QuickFind{}
+		quickfind.New(3)
+		quickfind.Union(1, 2)
+		quickfind.Union(0, 2)
+		quickfind.Connected(0, 1)
+		quickfind.Connected(1, 2)
+		quickfind.Connected(0, 2)
+	}
+}
