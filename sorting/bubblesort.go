@@ -1,9 +1,9 @@
 package sorting
 
-type number interface {
+type Number interface {
 	float64 | int | float32 | uint
 }
-type BubbleSort[T number] struct{} // classe
+type BubbleSort[T Number] struct{} // classe
 
 func (bs *BubbleSort[T]) Sort(v []T) []T { // metodo
 	for i, a := range v {
